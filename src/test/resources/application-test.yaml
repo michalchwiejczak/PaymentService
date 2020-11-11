@@ -1,0 +1,6 @@
+óapplication:
+  engine:
+    type: CSV #allowed values: CSV, DATABASE
+    csv:
+      file-path: d:\payments-test.csv
+      tmp-file-path: d:\tmp-test.csv

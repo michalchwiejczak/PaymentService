@@ -1,0 +1,12 @@
+
+
+logging:
+  level:
+    ROOT: INFO
+
+application:
+  engine:
+    type: CSV #allowed values: CSV, DATABASE
+    csv:
+      file-path: d:\payments.csv
+      tmp-file-path: d:\tmp.csv
