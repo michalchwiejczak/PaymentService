@@ -25,16 +25,28 @@ public class CsvPaymentRepository implements PaymentRepository {
 
     @Override
     public Optional<Payment> findById(String paymentId) {
-        return csvFileHandler.findById(paymentId)
-                .map(record -> csvPaymentFactory.toPayment(record));
+        try{
+            mutex.lock();
+            return csvFileHandler.findById(paymentId)
+                    .map(record -> csvPaymentFactory.toPayment(record));
+        }
+        finally {
+            mutex.unlock();
+        }
     }
 
 
     @Override
     public List<Payment> findAll() {
+        try{
+            mutex.lock();
             return csvFileHandler.findAll().stream()
                     .map(record -> csvPaymentFactory.toPayment(record))
                     .collect(Collectors.toList());
+        }
+        finally {
+            mutex.unlock();
+        }
     }
 
 
