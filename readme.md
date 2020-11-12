@@ -4,11 +4,11 @@ API documentation: http://localhost:8080/swagger-ui.html
 
 
 
-#Java developer exercise 
+# Java developer exercise 
  
 Prepare a simple service, which will let the client store and read payments.  
  
-##Functional requirements 
+## Functional requirements 
 * Payment is described by: unique identifier created during persistence process, amount, currency, user ID and target bank account number 
 * Payments should be stored by the service 
 * Service should expose an API, which should be able to: 
@@ -16,7 +16,7 @@ Prepare a simple service, which will let the client store and read payments.
 * Create, update and delete payment resources 
 * List a collection of payment resources 
 
-##Non-Functional requirements 
+## Non-Functional requirements 
 * API should be RESTFUL 
 * Application should be able to  store payments in a CSV file 
 * The code should be open for extensions, i.e  possibility to add a support for an in-memory database storage, so  the type of storage engine could be passed as a configuration parameter 
