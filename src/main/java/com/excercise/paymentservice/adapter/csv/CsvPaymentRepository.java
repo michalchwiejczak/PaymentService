@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class CsvPaymentRepository implements PaymentRepository {
 
-    //an alternative to thread-level locking can be
+    // an alternative to thread-level locking can be
     // FileChannel class mechanism but it isn't portable
     private final ReentrantLock mutex = new ReentrantLock();
     private final CsvFileHandler csvFileHandler;
